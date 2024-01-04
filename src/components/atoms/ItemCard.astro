@@ -1,0 +1,33 @@
+---
+interface Props {
+  color: string;
+}
+---
+
+<div class="item-card">
+  <slot class="image" />
+</div>
+
+<style>
+  .item-card {
+    width: 100%;
+    min-width: 10rem;
+    height: 7.5rem;
+    border: 1px solid #009df4;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: #009df4;
+      color: #fff;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  slot:hover {
+    fill: #fff;
+  }
+</style>

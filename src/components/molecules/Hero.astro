@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import ImageProfile from "/public/assets/images/profile.svg";
+import Button from "../atoms/Button.astro";
+---
+
+<section>
+  <Image src={ImageProfile} alt="Astro" width={130} />
+  <h1 class="hero-title">
+    soy Gabriel ✌️ <span class="hero-title--designer">UI Designer &</span>
+    <strong class="hero-title--frontend"> Frontend Dev 👨🏽‍💻</strong>
+  </h1>
+  <p class="hero-subtitle">
+    Creando interfaces que resuelven, código que responde. Eleva tu proyecto con
+    diseño y desarrollo que marcan la diferencia.
+  </p>
+  <Button type="button" text="Descarga mi CV" />
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1rem;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 1rem 0;
+    text-align: left;
+  }
+  .hero-title--designer {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: -5px 0;
+  }
+  .hero-title--frontend {
+    display: block;
+    font-size: 5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+  }
+  .hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 1rem 0;
+    text-align: left;
+  }
+</style>

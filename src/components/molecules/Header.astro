@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import Logo from "/public/assets/images/Logo.svg";
+
+if (typeof window !== "undefined") {
+  const headerSticky = document.querySelector(".header");
+  const headerHeight = (headerSticky as HTMLElement).offsetHeight;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > headerHeight) {
+      if (headerSticky) {
+        headerSticky.classList.add("sticky");
+      }
+    } else {
+      if (headerSticky) {
+        headerSticky.classList.remove("sticky");
+      }
+    }
+  });
+}
+---
+
+<header class="header">
+  <a href="/">
+    <Image class="logo" src={Logo} alt="Astro logo" width={190} />
+  </a>
+</header>
+
+<style>
+  header {
+    display: flex;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    background: #2b2c37;
+    z-index: 1;
+    transition: border-bottom 0.3s;
+  }
+
+  .sticky {
+    border-bottom: 1px solid #55576a4a;
+  }
+
+  .logo {
+    display: block;
+    margin: 0 15px;
+  }
+</style>

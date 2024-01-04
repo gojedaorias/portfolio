@@ -1,0 +1,92 @@
+---
+import Header from "../components/molecules/Header.astro";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Portafolio de Gabriel Ojeda, especialista en UI Design y Front End Dev. Creando experiencias digitales únicas y funcionales para marcas modernas."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <div class="container">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "Avant Garde";
+    src: url("/assets/fonts/ITCAvantGardeStd-Bk.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap; /* Peso normal. */
+  }
+
+  @font-face {
+    font-family: "Avant Garde";
+    src: url("/assets/fonts/ITCAvantGardeStd-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap; /* Peso en negrita. */
+  }
+
+  @font-face {
+    font-family: "Avant Garde";
+    src: url("/public//assets/fonts/ITCAvantGardeStd-Demi.ttf")
+      format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap; /* Peso semibold. */
+  }
+
+  @font-face {
+    font-family: "Avant Garde";
+    src: url("/public/assets/fonts/ITCAvantGardeStd-Md.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap; /* Peso medio. */
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Avant Garde", Helvetica, sans-serif, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #e2e2e2;
+    background-color: #2b2c37;
+    width: 100vw;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      max-width: 90%;
+    }
+  }
+  .container {
+    max-width: 930px;
+    margin: 0 auto;
+  }
+</style>
